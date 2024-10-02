@@ -1,0 +1,47 @@
+/* src/components/Column.css */
+.column {
+    /*border-radius: 5px;*/
+    padding: 5px;
+    width: 275px;
+    min-height: 400px;
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+  }
+  
+  .columnheading{
+    /*text-align: center;*/
+    font-size: 12px;
+    font-weight: bold;
+    font-family: roboto, Arial, Helvetica, sans-serif;
+    margin-bottom: 17.5px;
+
+    display: flex;
+    justify-content: space-between; /* Align left and right content */
+    align-items: center; /* Vertically center the content */
+    padding: 5px 10px 5px 10px;
+    /*text-align: left;*/
+  }
+  
+  .columndetails{
+    display: flex;
+    flex-wrap: wrap;;
+    gap: 10px;
+    /*padding-left: 10px;
+    padding-right:10px;*/
+  }
+
+  .columnedit{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /*padding-left: 10px;
+    padding-right:10px;*/
+  }
+
+  #cardnumber{
+    color: #878a88;
+  }
+  
+  .img{
+    height:16px;
+    width:16px;
+  }

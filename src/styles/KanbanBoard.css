@@ -1,0 +1,19 @@
+/* src/components/KanbanBoard.css */
+.kanban-board {
+    background-color: #f4f5f7;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 17.5px;
+    justify-content: center;
+    min-height: calc(100vh - 70px);
+    padding-left: 15px;
+    padding-right:15px;
+  }
+  
+  @media (max-width: 768px) {
+    .column {
+      width: 100%;
+    }
+  }
+  
