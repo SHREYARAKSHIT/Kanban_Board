@@ -18,22 +18,6 @@ const App = () => {
     return localStorage.getItem('sortBy') || 'priority';
   });
 
-  /*useEffect(() => {
-    const fetchTickets = async () => {
-      try {
-        const response = await fetch('https://api.quicksell.co/v1/internal/frontend-assignment');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setTickets(data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-  
-    fetchTickets();
-  }, []);*/
   useEffect(() => {
     const fetchTickets = async () => {
       try {
@@ -42,17 +26,11 @@ const App = () => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        // Ensure tickets is an array
-        /*if (Array.isArray(data.tickets)) {
-          setTickets(data.tickets);
-        } else {
-          console.error('Fetched data is not an array:', data.tickets);
-        }*/
         const enrichedTickets = await data.tickets.map(ticket => {
-          const user = data.users.find(user => user.id === ticket.userId); // Match user by ID
+          const user = data.users.find(user => user.id === ticket.userId); 
           return {
-            ...ticket, // Spread existing ticket properties
-            userName: user ? user.name : "Unknown user", // Add user details or unknown user
+            ...ticket, 
+            userName: user ? user.name : "Unknown user", 
             availability: user? (user.available===true?"Available":"Not available"): "Unknown"
           };
         }); 

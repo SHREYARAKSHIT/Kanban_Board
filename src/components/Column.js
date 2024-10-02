@@ -30,7 +30,7 @@ const Column = ({ title, tickets, groupBy}) => {
           case 'low':
             return require("../icons_FEtask/Img - Low Priority.svg").default;
           default:
-            return null; // Return null if no match found
+            return null; 
         }
       };
       

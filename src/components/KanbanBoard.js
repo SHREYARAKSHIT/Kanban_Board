@@ -5,7 +5,6 @@ import Column from './Column';
 import '../styles/KanbanBoard.css';
 
 const KanbanBoard = ({ tickets, groupBy, sortBy }) => {
-  // Function to group tickets based on the selected option
   const getPriorityLabel = (priority) => {
     switch (priority) {
       case 4:
@@ -75,7 +74,6 @@ const KanbanBoard = ({ tickets, groupBy, sortBy }) => {
         grouped = Object.fromEntries(sortedGroups);
     }
 
-    // Sort each group
     for (let key in grouped) {
       grouped[key].sort((a, b) => {
         if (sortBy === 'priority') {
@@ -90,7 +88,6 @@ const KanbanBoard = ({ tickets, groupBy, sortBy }) => {
     return grouped;
   }, [tickets, groupBy, sortBy]);
 
-  //const groupedTickets = groupTickets();
 
   return (
     <div className="kanban-board">
